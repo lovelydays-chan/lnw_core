@@ -4,7 +4,7 @@
     "type": "library",
     "require": {
         "zendframework/zend-db": "^2.9",
-        "twig/twig": "2.x-dev"
+        "twig/twig": "2.x"
     },
     "require-dev": {
 
