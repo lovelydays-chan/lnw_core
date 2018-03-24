@@ -3,7 +3,8 @@
     "description": "Core package for Lnw",
     "type": "library",
     "require": {
-        "zendframework/zend-db": "^2.9"
+        "zendframework/zend-db": "^2.9",
+        "twig/twig": "2.x-dev"
     },
     "require-dev": {
 
