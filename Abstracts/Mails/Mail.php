@@ -1,6 +1,6 @@
 <?php
 
-namespace Lnw\Core\Abstracts;
+namespace Lnw\Core\Abstracts\Mails;
 
 use Zend\Mail as Mailable;
 
@@ -9,8 +9,6 @@ use Zend\Mail as Mailable;
  *
  * @author  Mahmoud Zalt <mahmoud@zalt.me>
  */
-
 abstract class Mail extends Mailable
 {
-
 }

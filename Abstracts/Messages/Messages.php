@@ -1,5 +1,6 @@
 <?php
-namespace Lnw\Core\Abstracts;
+
+namespace Lnw\Core\Abstracts\Messages;
 
 class Messages
 {

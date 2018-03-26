@@ -1,6 +1,6 @@
 <?php
 
-namespace Lnw\Core\Abstracts;
+namespace Lnw\Core\Abstracts\Controllers;
 
 abstract class Controller
 {
