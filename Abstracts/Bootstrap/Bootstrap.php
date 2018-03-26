@@ -1,5 +1,5 @@
 <?php
-namespace Lnw\Core\Abstracts\Bootstrap;
+namespace Lnw\Core\Abstracts;
 
 class Bootstrap
 {

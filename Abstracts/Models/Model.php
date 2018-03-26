@@ -1,6 +1,6 @@
 <?php
 
-namespace Lnw\Core\Abstracts\Models;
+namespace Lnw\Core\Abstracts;
 use Zend\Db\Adapter\Adapter;
 
 abstract class Model extends Adapter

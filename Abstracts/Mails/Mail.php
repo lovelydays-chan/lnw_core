@@ -1,6 +1,6 @@
 <?php
 
-namespace Lnw\Core\Abstracts\Mails;
+namespace Lnw\Core\Abstracts;
 
 use Zend\Mail as Mailable;
 
