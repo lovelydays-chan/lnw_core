@@ -11,11 +11,8 @@
     },
     "autoload": {
         "psr-4": {
-          "Lnw\\Core\\": ""
+          "Lnw\\": "Abstracts/"
         }
-    },
-    "autoload-dev": {
-        "psr-4": {}
     },
     "license": "MIT",
     "authors": [
