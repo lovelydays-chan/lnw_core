@@ -9,6 +9,14 @@
     "require-dev": {
 
     },
+    "autoload": {
+        "psr-4": {
+          "Lnw\\Core\\": ""
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {}
+    },
     "license": "MIT",
     "authors": [
         {
