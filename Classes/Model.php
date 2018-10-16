@@ -1,6 +1,6 @@
 <?php
 
-namespace Lnw\Core\Classes\Model;
+namespace Lnw\Core\Classes;
 
 abstract class Model
 {
