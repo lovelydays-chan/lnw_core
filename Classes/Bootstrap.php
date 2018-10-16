@@ -1,6 +1,6 @@
 <?php
 
-namespace Lnw\Core\Classes;
+namespace Lnw\Core;
 
 class Bootstrap
 {
