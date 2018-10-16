@@ -2,6 +2,8 @@
 
 namespace Lnw\Core;
 
+use FastRoute;
+
 class Bootstrap
 {
     private $controller;
