@@ -25,6 +25,5 @@
             "email": "channaxx@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
     "prefer-stable": true
 }
