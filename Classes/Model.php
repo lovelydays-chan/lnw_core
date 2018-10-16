@@ -13,14 +13,14 @@ abstract class Model
 
     public function __construct()
     {
-        $this->adapter = new Zend\Db\Adapter\Adapter([
+        $this->adapter = new \Zend\Db\Adapter\Adapter([
             'driver' => 'Mysqli',
             'database' => DB_NAME,
             'username' => DB_USER,
             'password' => DB_PASS,
             'charset' => 'utf8',
         ]);
-        $this->sql = new Zend\Db\Sql\Sql($this->adapter);
+        $this->sql = new \Zend\Db\Sql\Sql($this->adapter);
     }
 
     public function insert(array $data)
