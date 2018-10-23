@@ -44,7 +44,7 @@ class validator
 
     public function getTranslationsRootPath(): string
     {
-        return $_SERVER['DOCUMENT_ROOT'].(!empty(env('ROOT_PATH')) ? env('ROOT_PATH') : '');
+        return str_replace('//', '/', $_SERVER['DOCUMENT_ROOT'].(!empty(env('ROOT_PATH')) ? env('ROOT_PATH') : ''));
     }
 
     public function loadTranslator(): Translator
