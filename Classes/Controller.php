@@ -30,12 +30,12 @@ abstract class Controller
         return $data;
     }
 
-    protected function returnView($views, $viewmodel = false)
+    protected function returnView($views, $viewmodel = [])
     {
         if ($viewmodel) {
             extract($viewmodel);
         }
-        $view = 'views/'.strtolower(str_replace('.', '/', $views)).'.php';
+        $view = 'views/' . strtolower(str_replace('.', '/', $views)) . '.php';
         require $view;
     }
 }
