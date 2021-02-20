@@ -8,7 +8,7 @@ class Database
 {
     public function __construct()
     {
-        $config = require str_replace('//', '/', $_SERVER['DOCUMENT_ROOT'] . '/config/database.php');
+        $config = require $_SERVER['DOCUMENT_ROOT'] . '/config/database.php';
         $db_config = $config['connections'][$config['default']];
         $capsule = new Capsule();
         $capsule->addConnection([
