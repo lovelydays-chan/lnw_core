@@ -3,9 +3,10 @@
   "description": "Core package for Lnw",
   "type": "library",
   "require": {
-    "illuminate/validation": "^8.22",
-    "illuminate/database": "^8.22",
-    "illuminate/filesystem": "^8.22",
+    "php": "^7.3|^8.0",
+    "illuminate/validation": "^8.2",
+    "illuminate/database": "^8.2",
+    "illuminate/filesystem": "^8.2",
     "vlucas/phpdotenv": "^2.5",
     "illuminate/support": "^5.7",
     "nikic/fast-route": "^1.3"
