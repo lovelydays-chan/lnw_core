@@ -3,8 +3,6 @@
   "description": "Core package for Lnw",
   "type": "library",
   "require": {
-    "illuminate/filesystem": "^5.7",
-    "illuminate/translation": "^5.6",
     "illuminate/validation": "^5.6",
     "illuminate/database": "^8.28",
     "vlucas/phpdotenv": "^2.5",
