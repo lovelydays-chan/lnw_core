@@ -7,9 +7,10 @@
     "illuminate/validation": "^8.2",
     "illuminate/database": "^8.2",
     "illuminate/filesystem": "^8.2",
-    "vlucas/phpdotenv": "^2.5",
+    "vlucas/phpdotenv": "5.2.0",
     "illuminate/support": "^8.2",
-    "nikic/fast-route": "^1.3"
+    "nikic/fast-route": "^1.3",
+    "phpoption/phpoption": "^1.7"
   },
   "require-dev": {},
   "autoload": {
