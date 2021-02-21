@@ -27,7 +27,7 @@ class Bootstrap
                 list($class, $method) = explode('@', $handler, 2);
                 $this->controller = $class ?? 'home';
                 $this->action = $method ?? 'index';
-                $this->request = $this->cleanData(array_merge($vars, $_GET, $_POST));
+                $this->request = $this->cleanData(array_merge($vars, $_REQUEST));
                 break;
         }
     }
