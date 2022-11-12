@@ -23,6 +23,8 @@ class Bootstrap
         });
         $dotenv = Dotenv::createImmutable("./");
         $dotenv->load();
+        new Database();
+
         $httpMethod = $_SERVER['REQUEST_METHOD'];
         $uri = str_replace('//', '/', str_replace(basename(__DIR__), '', $_SERVER['REQUEST_URI']));
 
@@ -33,9 +35,6 @@ class Bootstrap
         $uri = rawurldecode($uri);
         $routeInfo = $dispatcher->dispatch($httpMethod, $uri);
         $route = $this->controlRoute($routeInfo);
-        if ($route) {
-            new Database();
-        }
         return $route;
     }
     protected function controlRoute($routeInfo)
@@ -53,8 +52,8 @@ class Bootstrap
                 $handler = $routeInfo[1];
                 $vars = $routeInfo[2];
                 list($class, $method) = explode('@', $handler, 2);
-                $this->controller = $class ?? 'home';
-                $this->action = $method ?? 'index';
+                $this->controller = !empty($class) ? $class : 'home';
+                $this->action = !empty($method) ? $method : 'index';
                 $this->request = $this->cleanData(array_merge($vars, $_REQUEST));
                 break;
         }
