@@ -19,7 +19,7 @@
             "Lnw\\Core\\": "Classes/"
         },
         "files": [
-            "helpers.php"
+            "Classes/helpers.php"
         ],
         "classmap": [{
             "Msg": "Classes/Messages.php",
