@@ -7,6 +7,7 @@
         "illuminate/validation": "^8.2",
         "illuminate/database": "^8.2",
         "illuminate/filesystem": "^8.2",
+        "illuminate/translation": "^8.2",
         "illuminate/events": "^8.2",
         "vlucas/phpdotenv": "^5.2.0",
         "illuminate/support": "^8.2",
