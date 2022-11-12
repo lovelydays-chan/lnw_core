@@ -6,24 +6,10 @@ use Lnw\Core\Msg;
 
 abstract class Controller
 {
-    private $request;
-    private $action;
 
     public function __construct($action, $request)
     {
         return $this->{$action}($request);
-    }
-
-    public function request($key = 'all')
-    {
-        $data = null;
-        if ($key === 'all') {
-            $data = (object) $this->request;
-        } else {
-            $data = $this->request[$key] ?? '';
-        }
-
-        return $data;
     }
 
     protected function returnView($views, $viewmodel = [])
