@@ -14,7 +14,7 @@ class Bootstrap
     private $controller;
     private $action;
     private $request;
-    protected $structure = ['vendor', 'models', 'controllers', 'helper'];
+    protected $structure = ['vendor', 'classs', 'models', 'controllers', 'helper'];
     public function __construct()
     {
         array_map([$this, 'includeFiles'], $this->structure);

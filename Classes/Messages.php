@@ -2,27 +2,31 @@
 
 namespace Lnw\Core;
 
-class Messages
+class Msg
 {
-    public static function setMsg($text, $type)
+    public static function set($key, $value)
     {
-        if ($type === 'error') {
-            $_SESSION['errorMsg'] = $text;
-        } else {
-            $_SESSION['successMsg'] = $text;
-        }
+        $_SESSION['msg'][$key] = serialize($value);
     }
 
-    public static function display()
+    public static function get($key = '')
     {
-        if (isset($_SESSION['errorMsg'])) {
-            echo '<div class="alert alert-danger">'.$_SESSION['errorMsg'].'</div>';
-            unset($_SESSION['errorMsg']);
+        $data = null;
+        if ($key == '' && isset($_SESSION['msg']) && count($_SESSION['msg']) > 0) {
+            foreach ($_SESSION['msg'] as $k => $v) {
+                $data[$k] = unserialize($v);
+                unset($_SESSION['msg'][$k]);
+            }
+        } else {
+            if (isset($_SESSION['msg'][$key])) {
+                $data = unserialize($_SESSION['msg'][$key]);
+                unset($_SESSION['msg'][$key]);
+            }
         }
-
-        if (isset($_SESSION['successMsg'])) {
-            echo '<div class="alert alert-success">'.$_SESSION['successMsg'].'</div>';
-            unset($_SESSION['successMsg']);
-        }
+        return $data;
+    }
+    public static function destroy()
+    {
+        unset($_SESSION['msg']);
     }
 }

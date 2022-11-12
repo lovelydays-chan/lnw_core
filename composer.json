@@ -17,7 +17,11 @@
     "autoload": {
         "psr-4": {
             "Lnw\\Core\\": "Classes/"
-        }
+        },
+        "classmap": [{
+            "Msg": "Classes/Messages.php",
+            "Config": "Classes/Config.php"
+        }]
     },
     "autoload-dev": {
         "psr-4": {}
