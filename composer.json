@@ -18,9 +18,15 @@
         "psr-4": {
             "Lnw\\Core\\": "Classes/"
         },
+        "files": [
+            "helpers.php"
+        ],
         "classmap": [{
             "Msg": "Classes/Messages.php",
-            "Config": "Classes/Config.php"
+            "Config": "Classes/Config.php",
+            "Datatables": "Classes/Datatables.php",
+            "Validate": "Classes/Validate.php",
+            "Token": "Classes/Token.php"
         }]
     },
     "autoload-dev": {
