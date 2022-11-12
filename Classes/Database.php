@@ -2,26 +2,41 @@
 
 namespace Lnw\Core;
 
+use Lnw\Core\Config;
+use Exception;
 use Illuminate\Database\Capsule\Manager as Capsule;
+use Illuminate\Events\Dispatcher;
+use Illuminate\Container\Container;
 
 class Database
 {
     public function __construct()
     {
-        $config = require $_SERVER['DOCUMENT_ROOT'] . '/config/database.php';
-        $db_config = $config['connections'][$config['default']];
-        $capsule = new Capsule();
-        $capsule->addConnection([
-            'driver' => $db_config['driver'],
-            'host' => $db_config['host'],
-            'database' => $db_config['database'],
-            'username' => $db_config['username'],
-            'password' => $db_config['password'],
-            'charset' => $db_config['charset'],
-            'collation' => $db_config['collation'],
-            'prefix' => $db_config['prefix'],
-        ]);
-        // Setup the Eloquent ORM…
-        $capsule->bootEloquent();
+        try {
+            $default = Config::get("database.default");
+            $connections = Config::get("database.connections");
+            if (isset($connections[$default])) {
+                $connections = array_merge(['default' => $connections[$default]], $connections);
+            }
+            $capsule = new Capsule();
+            foreach ($connections as $key => $connection) {
+                $capsule->addConnection([
+                    'driver' => $connection['driver'],
+                    'host' => $connection['host'],
+                    'database' => $connection['database'],
+                    'username' => $connection['username'],
+                    'password' => $connection['password'],
+                    'charset' => $connection['charset'],
+                    'collation' => $connection['collation'],
+                    'prefix' => $connection['prefix']
+                ], $key);
+            }
+            $capsule->setEventDispatcher(new Dispatcher(new Container));
+            // Setup the Eloquent ORM…
+            $capsule->setAsGlobal();
+            $capsule->bootEloquent();
+        } catch (Exception $e) {
+            throw new Exception($e->getMessage());
+        }
     }
 }
